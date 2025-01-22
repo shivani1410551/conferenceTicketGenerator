@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  label {
+    @apply block text-Neutral300 text-sm font-normal;
+  }
+  input {
+    @apply block border-Neutral500 rounded-md w-full my-2 placeholder:text-xs
+    border p-2 mt-1 cursor-pointer hover:bg-Neutral700 transition-all bg-Neutral400 focus:border-Neutral300;
+  }
+  button {
+    @apply inline-block bg-Orange500 text-Neutral900 border rounded-md w-full border-none outline-none font-xbold
+    py-2 hover:bg-Orange700 transition focus:border-Neutral300;
+  }
+  .heading {
+    @apply font-bold lg:text-4xl sm:text-3xl;
+  }
+  .avatarBtn {
+    @apply px-2 py-1 rounded-2xl bg-Neutral400 text-Neutral0 text-xs;
+  }
+}
+
+.flexCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main {
+  min-height: 100vh;
+  background-attachment: fixed;
+  background:
+    url('/assets/images/pattern-squiggly-line-top.svg') no-repeat right top,
+    url('/assets/images/pattern-squiggly-line-bottom.svg') no-repeat left bottom,
+    url('/assets/images/pattern-lines.svg') no-repeat center right,
+    url('/assets/images/pattern-circle.svg') no-repeat center right,
+    url('/assets/images/background-mobile.png') no-repeat center top;
+  background-size: 50%, contain, contain, auto, cover;
+  background-position: right top, left bottom, right center, 80% 50%, left bottom;
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    background:
+      url('/assets/images/pattern-squiggly-line-top.svg') no-repeat right top,
+      url('/assets/images/pattern-squiggly-line-bottom.svg') no-repeat left bottom,
+      url('/assets/images/pattern-lines.svg') no-repeat center right,
+      url('/assets/images/pattern-circle.svg') no-repeat center right,
+      url('/assets/images/background-tablet.png') no-repeat center top;
+    background-size: 50%, contain, contain, auto, cover;
+    background-position: right top, left bottom, right center, 80% 50%, left bottom;
+  }
+  .flexCenter {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+}
+
+@media screen and (min-width: 1080px) {
+  .main {
+    background:
+      url('/assets/images/pattern-squiggly-line-top.svg') no-repeat right top,
+      url('/assets/images/pattern-squiggly-line-bottom.svg') no-repeat left bottom,
+      url('/assets/images/pattern-lines.svg') no-repeat center right,
+      url('/assets/images/pattern-circle.svg') no-repeat center right,
+      url('/assets/images/background-desktop.png') no-repeat center top;
+    background-size: auto, auto, contain, auto, cover;
+    background-position: right 5rem, 0 300px, center right, 80% 50%, left bottom;
+  }
+  .flexCenter {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .heading {
+    @apply text-[2.8rem] leading-[2.8rem];
+  }
+
+}
