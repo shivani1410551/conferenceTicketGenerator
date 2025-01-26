@@ -17,7 +17,7 @@ const App: React.FC = () => {
 
   return (
     <main
-      className="main flexCenter min-h-full text-Neutral0 md:bg-url('/assets/images/background-tablet.png')"
+      className="main flexCenter h-[200vh]  text-Neutral0 md:bg-url('/assets/images/background-tablet.png')"
     >
       <div className="p-6 md:w-[44rem] lg:w-[54rem] flexCenter space-y-4 font-font text-[1.25rem]">
         <Logo />

@@ -98,7 +98,7 @@ const Form: React.FC<FormProps> = ({ handleUserData }) => {
         <label htmlFor="avatar">
           Upload Avatar
           <div
-            className={`border-dashed border-2 px-4 py-8 mt-2 rounded-lg text-center hover:bg-Neutral700 bg-Neutral400 transition-all ${
+            className={`border-dashed border-2 px-4 py-6 mt-2 rounded-lg text-center hover:bg-Neutral700 bg-Neutral400 transition-all ${
               errors.avatar ? "border-red-500" : "border-Neutral500"
               }`}
                         onDragOver={(e) => e.preventDefault()} // Prevent default behavior
