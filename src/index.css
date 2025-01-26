@@ -4,7 +4,7 @@
 
 @layer components {
   label {
-    @apply block text-Neutral300 text-sm font-normal;
+    @apply block text-Neutral300 text-lg font-semibold;
   }
   input {
     @apply block border-Neutral500 rounded-md w-full my-2 placeholder:text-xs
@@ -15,7 +15,7 @@
     sm:py-2 md:p-4 hover:bg-Orange700 transition focus:border-Neutral300;
   }
   .heading {
-    @apply font-bold lg:text-4xl sm:text-3xl;
+    @apply font-xbold   sm:text-3xl md:text-4xl ;
   }
   .avatarBtn {
     @apply px-2 py-1 rounded-2xl bg-Neutral400 text-Neutral0 text-xs;
@@ -76,7 +76,10 @@
     padding-right: 30px;
   }
   .heading {
-    @apply text-[2.8rem] leading-[2.8rem];
+
+  @apply text-[3.4rem] leading-[120%] mx-6 font-xbold;
+
+
   }
 
 }
