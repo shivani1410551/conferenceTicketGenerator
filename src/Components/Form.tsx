@@ -67,11 +67,31 @@ const Form: React.FC<FormProps> = ({ handleUserData }) => {
     handleUserData(newUser); // Pass new user data to parent
   };
 
+
+  const handleFileDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    const file = e.dataTransfer.files[0]; // Get the first dropped file
+    if (file) {
+      // Validate file size (e.g., max 500KB)
+      if (file.size > 500 * 1024) {
+        alert("File size exceeds 500KB. Please upload a smaller file.");
+        return;
+      }
+      // Validate file type (e.g., JPG, PNG)
+      if (!["image/jpeg", "image/png"].includes(file.type)) {
+        alert("Invalid file type. Please upload a JPG or PNG image.");
+        return;
+      }
+      // Generate a preview URL
+      const previewUrl = URL.createObjectURL(file);
+      dispatch({ type: "setAvatar", payload: { file, previewUrl } });
+    }
+  };
   return (
     <>
       <form
         onSubmit={handleSubmit(onHandleSubmit)}
-        className="lg:w-[22rem] space-y-4 relative z-20"
+        className=" lg:w-[32rem] md:w-[22rem] space-y-4 relative z-20"
         noValidate
       >
         {/* Avatar Upload */}
@@ -80,7 +100,10 @@ const Form: React.FC<FormProps> = ({ handleUserData }) => {
           <div
             className={`border-dashed border-2 p-4 mt-2 rounded-lg text-center hover:bg-Neutral700 bg-Neutral400 transition-all ${
               errors.avatar ? "border-red-500" : "border-Neutral500"
-            }`}
+              }`}
+                        onDragOver={(e) => e.preventDefault()} // Prevent default behavior
+            onDrop={handleFileDrop} // Handle file drop
+
           >
             {avatar?.previewUrl ? (
               <div className="flex flex-col items-center space-y-2">

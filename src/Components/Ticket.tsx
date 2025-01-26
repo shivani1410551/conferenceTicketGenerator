@@ -7,6 +7,7 @@ type TTicketProps = {
 };
 
 const Ticket: React.FC<TTicketProps> = ({ userData }) => {
+  console.log(userData)
   useEffect(() => {
     const objectUrls = userData.map((user) =>
       user.avatar ? URL.createObjectURL(user.avatar) : null

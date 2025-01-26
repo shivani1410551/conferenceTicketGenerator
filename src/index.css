@@ -8,11 +8,11 @@
   }
   input {
     @apply block border-Neutral500 rounded-md w-full my-2 placeholder:text-xs
-    border p-2 mt-1 cursor-pointer hover:bg-Neutral700 transition-all bg-Neutral400 focus:border-Neutral300;
+    border md:p-4 sm:p-2 mt-1 cursor-pointer hover:bg-Neutral700 transition-all bg-Neutral400 focus:border-Neutral300;
   }
   button {
     @apply inline-block bg-Orange500 text-Neutral900 border rounded-md w-full border-none outline-none font-xbold
-    py-2 hover:bg-Orange700 transition focus:border-Neutral300;
+    sm:py-2 md:p-4 hover:bg-Orange700 transition focus:border-Neutral300;
   }
   .heading {
     @apply font-bold lg:text-4xl sm:text-3xl;
